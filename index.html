@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея нейро-картин</title>
+    <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        
+        .gallery__item {
+            position: relative;
+            list-style: none;
+        }
+
+        .like-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        
+        .like-toggle {
+            display: none;
+        }
+
+        
+        .like-label {
+            cursor: pointer;
+            font-size: 24px;
+            user-select: none;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .like-label:hover {
+            transform: scale(1.1);
+        }
+
+      
+        .like-label::before {
+            content: '♡';
+            color: #666;
+        }
+
+        
+        .like-toggle:checked + .like-label::before {
+            content: '♥';
+            color: #ff4d4d;
+        }
+
+       
+        .like-count {
+            font-size: 16px;
+            color: #666;
+            min-width: 30px;
+            counter-increment: none;
+        }
+
+        
+        #count1 { counter-reset: likes 0; }
+        #count2 { counter-reset: likes 0; }
+        #count3 { counter-reset: likes 0; }
+        #count4 { counter-reset: likes 0; }
+        #count5 { counter-reset: likes 0; }
+        #count6 { counter-reset: likes 0; }
+        #count7 { counter-reset: likes 0; }
+        #count8 { counter-reset: likes 0; }
+        #count9 { counter-reset: likes 0; }
+        #count10 { counter-reset: likes 0; }
+        #count11 { counter-reset: likes 0; }
+        #count12 { counter-reset: likes 0; }
+
+        
+        #like1:checked ~ #count1 { counter-increment: likes 1; }
+        #like2:checked ~ #count2 { counter-increment: likes 1; }
+        #like3:checked ~ #count3 { counter-increment: likes 1; }
+        #like4:checked ~ #count4 { counter-increment: likes 1; }
+        #like5:checked ~ #count5 { counter-increment: likes 1; }
+        #like6:checked ~ #count6 { counter-increment: likes 1; }
+        #like7:checked ~ #count7 { counter-increment: likes 1; }
+        #like8:checked ~ #count8 { counter-increment: likes 1; }
+        #like9:checked ~ #count9 { counter-increment: likes 1; }
+        #like10:checked ~ #count10 { counter-increment: likes 1; }
+        #like11:checked ~ #count11 { counter-increment: likes 1; }
+        #like12:checked ~ #count12 { counter-increment: likes 1; }
+
+        
+        .like-count::after {
+            content: counter(likes);
+        }
+
+        
+        @media (max-width: 768px) {
+            .like-label {
+                font-size: 20px;
+            }
+            
+            .like-count {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header__overlay">
+            <div class="header__link">
+                <a href="#gallery" class="header__anchor">Галерея</a>
+            </div>
+            <h1 class="header__title">Выставка нейро-картин</h1>
+        </div>
+    </div>
+    
+    <div class="content">
+        <ul class="gallery" id="gallery">
+            <li class="gallery__item">
+                <img src="./images/1.png" class="image">
+                <div class="like-container">
+                    <input type="checkbox" id="like1" class="like-toggle">
+                    <label for="like1" class="like-label" aria-label="Нравится"></label>
+                    <span class="like-count" id="count1"></span>
+                </div>
+            </li>
+            
+            <li class="gallery__item">
+                <img src="./images/2.png" class="image">
+                <div class="like-container">
+                    <input type="checkbox" id="like2" class="like-toggle">
+                    <label for="like2" class="like-label" aria-label="Нравится"></label>
+                    <span class="like-count" id="count2"></span>
+                </div>
+            </li>
+            
+            <li class="gallery__item">
+                <img src="./images/3.png" class="image">
+                <div class="like-container">
+                    <input type="checkbox" id="like3" class="like-toggle">
+                    <label for="like3" class="like-label" aria-label="Нравится"></label>
+                    <span class="like-count" id="count3"></span>
+                </div>
+            </li>
+            
+            <li class="gallery__item">
+                <img src="./images/4.png" class="image">
+                <div class="like-container">
+                    <input type="checkbox" id="like4" class="like-toggle">
+                    <label for="like4" class="like-label" aria-label="Нравится"></label>
+                    <span class="like-count" id="count4"></span>
+                </div>
+            </li>
+            
+            <li class="gallery__item">
+                <img src="./images/5.png" class="image">
+                <div class="like-container">
+                    <input type="checkbox" id="like5" class="like-toggle">
+                    <label for="like5" class="like-label" aria-label="Нравится"></label>
+                    <span class="like-count" id="count5"></span>
+                </div>
+            </li>
+            
+            <li class="gallery__item">
+                <img src="./images/6.png" class="image">
+                <div class="like-container">
+                    <input type="checkbox" id="like6" class="like-toggle">
+                    <label for="like6" class="like-label" aria-label="Нравится"></label>
+                    <span class="like-count" id="count6"></span>
+                </div>
+            </li>
+            
+            <li class="gallery__item">
+                <img src="./images/7.png" class="image">
+                <div class="like-container">
+                    <input type="checkbox" id="like7" class="like-toggle">
+                    <label for="like7" class="like-label" aria-label="Нравится"></label>
+                    <span class="like-count" id="count7"></span>
+                </div>
+            </li>
+            
+            <li class="gallery__item">
+                <img src="./images/8.png" class="image">
+                <div class="like-container">
+                    <input type="checkbox" id="like8" class="like-toggle">
+                    <label for="like8" class="like-label" aria-label="Нравится"></label>
+                    <span class="like-count" id="count8"></span>
+                </div>
+            </li>
+            
+            <li class="gallery__item">
+                <img src="./images/9.png" class="image">
+                <div class="like-container">
+                    <input type="checkbox" id="like9" class="like-toggle">
+                    <label for="like9" class="like-label" aria-label="Нравится"></label>
+                    <span class="like-count" id="count9"></span>
+                </div>
+            </li>
+            
+            <li class="gallery__item">
+                <img src="./images/10.png" class="image">
+                <div class="like-container">
+                    <input type="checkbox" id="like10" class="like-toggle">
+                    <label for="like10" class="like-label" aria-label="Нравится"></label>
+                    <span class="like-count" id="count10"></span>
+                </div>
+            </li>
+            
+            <li class="gallery__item">
+                <img src="./images/11.png" class="image">
+                <div class="like-container">
+                    <input type="checkbox" id="like11" class="like-toggle">
+                    <label for="like11" class="like-label" aria-label="Нравится"></label>
+                    <span class="like-count" id="count11"></span>
+                </div>
+            </li>
+            
+            <li class="gallery__item">
+                <img src="./images/12.png" class="image">
+                <div class="like-container">
+                    <input type="checkbox" id="like12" class="like-toggle">
+                    <label for="like12" class="like-label" aria-label="Нравится"></label>
+                    <span class="like-count" id="count12"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="footer">
+        <div class="footer__overlay">
+            <p class="footer__text">Сделано руками Ульяны</p>
+        </div>
+    </div>
+</body>
+
+</html>
